@@ -37,5 +37,25 @@ public class CourseServiceImpl implements CourseService {
         al.add(course);
         return course;
     }
+
+    @Override
+    public Course updateCourse(Course course) {
+        for(Course c:al){
+            if(c.getCourseId()==course.getCourseId()){
+                c.setDescription(course.getDescription());
+                c.setTitle(course.getTitle());
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteCourse(Long id) {
+        for(Course c: al){
+            if(c.getCourseId()==id)
+                al.remove(c);
+        }
+
+    }
 }
 

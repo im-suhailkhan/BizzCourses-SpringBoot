@@ -3,6 +3,8 @@ package com.Courses.BizzCourses.Controller;
 import com.Courses.BizzCourses.Course;
 import com.Courses.BizzCourses.Services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,5 +36,19 @@ public class MyController {
         return this.courseService.addCourse(course);
     }
 
+    @PutMapping("/courses")
+    public Course updateCourse(@RequestBody Course course){
+        return this.courseService.updateCourse(course);
+    }
 
+    @DeleteMapping("/courses/{courseId}")
+    public ResponseEntity<HttpStatus> deleteCourse(@PathVariable String Id){
+        try{
+        this.courseService.deleteCourse(Long.getLong(Id));
+        return new ResponseEntity<>(HttpStatus.OK);
+        }
+        catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
