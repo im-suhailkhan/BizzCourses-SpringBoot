@@ -7,5 +7,5 @@ import java.util.List;
 public interface CourseService {
     public List<Course> getCourses();
     public Course getCourse(Long Id);
-
+    public Course addCourse(Course course);
 }

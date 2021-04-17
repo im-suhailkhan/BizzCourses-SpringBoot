@@ -1,10 +1,12 @@
 package com.Courses.BizzCourses.Services;
 
 import com.Courses.BizzCourses.Course;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class CourseServiceImpl implements CourseService {
 
     List<Course> al = new ArrayList<>();
@@ -28,6 +30,12 @@ public class CourseServiceImpl implements CourseService {
                 c=c1;
         }
         return c;
+    }
+
+    @Override
+    public Course addCourse(Course course) {
+        al.add(course);
+        return course;
     }
 }
 

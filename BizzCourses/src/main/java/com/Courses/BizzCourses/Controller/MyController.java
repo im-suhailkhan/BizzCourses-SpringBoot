@@ -4,9 +4,7 @@ import com.Courses.BizzCourses.Course;
 import com.Courses.BizzCourses.Services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,4 +28,11 @@ public class MyController {
     public Course getCourse(@PathVariable String Id){
         return this.courseService.getCourse(Long.getLong(Id));
     }
+
+    @PostMapping("/courses")
+    public Course addCourse(@RequestBody Course course){
+        return this.courseService.addCourse(course);
+    }
+
+
 }
