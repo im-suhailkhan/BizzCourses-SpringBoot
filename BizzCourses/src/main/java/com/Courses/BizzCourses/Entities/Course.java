@@ -1,6 +1,13 @@
 package com.Courses.BizzCourses;
 
+import jdk.jfr.Enabled;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Course {
+    @Id
     private long courseId;
     private String title;
     private String description;

@@ -1,6 +1,8 @@
 package com.Courses.BizzCourses.Services;
 
 import com.Courses.BizzCourses.Course;
+import com.Courses.BizzCourses.Dao.CourseDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,12 +11,14 @@ import java.util.List;
 @Service
 public class CourseServiceImpl implements CourseService {
 
-    List<Course> al = new ArrayList<>();
-
+//    List<Course> al = new ArrayList<>();
+    @Autowired
+    CourseDao courseDao;
     void CourseServiceImpl() {
-        al.add(new Course(11, "SEO", "This course will cover concepts of SEO"));
-        al.add(new Course(21, "SEM", "This course will cover concepts of SEM"));
-        al.add(new Course(31, "Email Marketing", "This course will cover concepts of Email marketing"));
+//        al.add(new Course(11, "SEO", "This course will cover concepts of SEO"));
+//        al.add(new Course(21, "SEM", "This course will cover concepts of SEM"));
+//        al.add(new Course(31, "Email Marketing", "This course will cover concepts of Email marketing"));
+//   
     }
 
     @Override
